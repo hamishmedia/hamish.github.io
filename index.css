@@ -38,7 +38,7 @@ header {
     position:fixed;
     font-weight:bold;
     background:transparent;
-    color:#fff;
+    color:#000;
     transition:0.4s ease-in-out;
     z-index:2;
 }
