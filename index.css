@@ -38,7 +38,7 @@ header {
     position:fixed;
     font-weight:bold;
     background:transparent;
-    color:#000;
+    color:#fff;
     transition:0.4s ease-in-out;
     z-index:2;
 }
@@ -88,7 +88,7 @@ header table {
     text-align:right;
 }
 #navigation a {
-    color:inherit;
+    color:#000;
     text-decoration:none;
     padding:5px 10px;
     border-bottom:2px solid transparent;
