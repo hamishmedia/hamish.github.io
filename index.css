@@ -417,12 +417,13 @@ button:focus {
 #testimonials {
     background-color: #f9f9f9;
     text-align: center;
-    padding: 6vh 4vw;
+  
 }
 
 .testimonial {
     margin: 2vh 0;
     font-style: italic;
+     padding: 6vh 4vw;
 }
 
 .testimonial span {
