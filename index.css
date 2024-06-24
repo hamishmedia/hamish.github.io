@@ -399,6 +399,7 @@ button:focus {
         color:#000;
     }
 }
+
 /* Common Section Styles */
 .section {
     width: 92vw;
@@ -417,13 +418,11 @@ button:focus {
 #testimonials {
     background-color: #f9f9f9;
     text-align: center;
-    padding: 6vh 4vw;
 }
 
 .testimonial {
     margin: 2vh 0;
     font-style: italic;
-     
 }
 
 .testimonial span {
