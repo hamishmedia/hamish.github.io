@@ -1,3 +1,5 @@
+
+
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
 body {
@@ -414,11 +416,14 @@ button:focus {
 }
 
 /* Testimonials Section Styles */
-#testimonials {
-    background-color: #f9f9f9;
+#testimonials h1 {
     text-align: center;
-    padding: 6vh 4vw;
+    margin: 0 auto;
+    display: inline-block;
+    border-bottom: 4px solid rgb(255, 44, 90);
+    width: auto; /* Adjust width to fit content */
 }
+
 
 .testimonial {
     margin: 2vh 0;
@@ -452,3 +457,21 @@ button:focus {
 #projects p {
     margin-top: 1vh;
 }
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
