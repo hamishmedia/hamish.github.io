@@ -1,52 +1,67 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const loadingSpinner = document.getElementById('loading-spinner');
-    const loadingMessage = document.getElementById('loading-message');
-    const body = document.body;
-
-    // Hide the body initially
-    body.style.visibility = 'hidden';
-
-    let allImagesLoaded = false;
-    let timeoutReached = false;
-
-    // Show the message after 5 seconds if assets are still loading
-    const messageTimeout = setTimeout(() => {
-        if (!allImagesLoaded) {
-            loadingMessage.style.display = 'block';
-            timeoutReached = true;
-        }
-    }, 5000);
-
-    // Function to check if all images are loaded
-    function checkImagesLoaded() {
-        const images = document.images;
-        for (let i = 0; i < images.length; i++) {
-            if (!images[i].complete) {
-                return false;
-            }
-        }
-        return true;
+var width = $(window).width(); 
+window.onscroll = function(){
+if ((width >= 1000)){
+    if(document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+        $("#header").css("background","#fff");
+        $("#header").css("color","#000");
+        $("#header").css("box-shadow","0px 0px 20px rgba(0,0,0,0.09)");
+        $("#header").css("padding","4vh 4vw");
+        $("#navigation a").hover(function(){
+            $(this).css("border-bottom","2px solid rgb(255, 44, 90)");
+        },function(){
+            $(this).css("border-bottom","2px solid transparent");
+        });
+    }else{
+        $("#header").css("background","transparent");
+        $("#header").css("color","#fff");
+        $("#header").css("box-shadow","0px 0px 0px rgba(0,0,0,0)");
+        $("#header").css("padding","6vh 4vw");
+        $("#navigation a").hover(function(){
+            $(this).css("border-bottom","2px solid #fff");
+        },function(){
+            $(this).css("border-bottom","2px solid transparent");
+        });
     }
+}
+}
 
-    // Interval to keep checking if all images are loaded
-    const interval = setInterval(() => {
-        if (checkImagesLoaded()) {
-            allImagesLoaded = true;
-            clearInterval(interval);
-            clearTimeout(messageTimeout);
-            loadingSpinner.style.display = 'none';
-            loadingMessage.style.display = 'none';
-            body.style.visibility = 'visible';
-        }
-    }, 100);
+function magnify(imglink){
+    $("#img_here").css("background",`url('${imglink}') center center`);
+    $("#magnify").css("display","flex");
+    $("#magnify").addClass("animated fadeIn");
+    setTimeout(function(){
+        $("#magnify").removeClass("animated fadeIn");
+    },800);
+}
 
-    // Ensure body visibility if all images are already loaded
-    if (checkImagesLoaded()) {
-        allImagesLoaded = true;
-        clearInterval(interval);
-        clearTimeout(messageTimeout);
-        loadingSpinner.style.display = 'none';
-        loadingMessage.style.display = 'none';
-        body.style.visibility = 'visible';
-    }
-});
+function closemagnify(){
+    $("#magnify").addClass("animated fadeOut");
+    setTimeout(function(){
+        $("#magnify").css("display","none");
+        $("#magnify").removeClass("animated fadeOut");
+        $("#img_here").css("background",`url('') center center`);
+    },800);
+}
+
+setTimeout(function(){
+    $("#loading").addClass("animated fadeOut");
+    setTimeout(function(){
+      $("#loading").removeClass("animated fadeOut");
+      $("#loading").css("display","none");
+    },800);
+},1650);
+
+$(document).ready(function(){
+    $("a").on('click', function(event) {
+      if (this.hash !== "") {
+        event.preventDefault();
+        var hash = this.hash;
+        $('body,html').animate({
+        scrollTop: $(hash).offset().top
+        }, 1800, function(){
+        window.location.hash = hash;
+       });
+       } 
+      });
+  });
+  
