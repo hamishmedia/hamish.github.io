@@ -62,24 +62,24 @@ body {
 }
 
 .parallax__layer-title {
-  z-index: 3;
-  position: absolute;
-  top: 20%;
-  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align to the left */
+  padding-left: 4vw;
   width: 100%;
+  height: 100svh;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
-
-
 
 .parallax__title {
   font-family: 'Montserrat', sans-serif;
   font-weight: 900;
-  color: #ebe9fc;
   font-size: clamp(2rem, 8vw, 5rem);
-  position: relative;
-  z-index: 3; /
-  text-align: left;    
-  padding-left: 5vw;    
+  line-height: 1;
+  color: white;
+  margin: 0;
 }
 
 
