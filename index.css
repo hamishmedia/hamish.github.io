@@ -62,26 +62,26 @@ body {
 }
 
 .parallax__layer-title {
+  z-index: 3;
   position: absolute;
-  z-index: 10; 
+  top: 20%;
+  left: 0;
   width: 100%;
-  text-align: center;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
 }
+
 
 
 .parallax__title {
   font-family: 'Montserrat', sans-serif;
   font-weight: 900;
-  text-align: center;
   color: #ebe9fc;
   font-size: clamp(2rem, 8vw, 5rem);
   position: relative;
-  z-index: 10;
+  z-index: 3; /
+  text-align: left;    
+  padding-left: 5vw;    
 }
+
 
 
 .parallax__fade {
