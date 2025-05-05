@@ -63,7 +63,7 @@ body {
 
 .parallax__layer-title {
   position: absolute;
-  z-index: 10; /* Must be higher than image layers */
+  z-index: 10; 
   width: 100%;
   text-align: center;
   top: 50%;
@@ -75,12 +75,14 @@ body {
 
 .parallax__title {
   font-family: 'Montserrat', sans-serif;
-  font-size: 11vw;
   font-weight: 900;
-  line-height: 1;
-  color: white;
-  margin: 0;
+  text-align: center;
+  color: #ebe9fc;
+  font-size: clamp(2rem, 8vw, 5rem);
+  position: relative;
+  z-index: 10;
 }
+
 
 .parallax__fade {
   z-index: 30;
