@@ -64,7 +64,7 @@ body {
 .parallax__layer-title {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Align to the left */
+  justify-content: flex-start;
   padding-left: 4vw;
   width: 100%;
   height: 100svh;
@@ -81,8 +81,6 @@ body {
   color: white;
   margin: 0;
 }
-
-
 
 .parallax__fade {
   z-index: 30;
@@ -102,19 +100,6 @@ body {
   min-height: 100svh;
 }
 
-.osmo-icon-svg {
-  width: 8em;
-  position: relative;
-}
-
-.parallax__more-link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 3rem;
-  text-decoration: none;
-}
-
 .parallax__more-img {
   width: 160px;
   height: auto;
@@ -126,19 +111,14 @@ body {
   transform: scale(1.1);
 }
 
-
-.parallax__more-link:hover {
-  transform: scale(1.05);
-}
-
-
-
-/* TEMPORARY TESTING BELOW */
-
+/* Logo Scroller */
 .company-banner {
-  background: transparent;
-  padding: 2rem 0;
-  position: relative;
+  background-color: black;
+  padding: 1rem 0;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
   z-index: 5;
 }
 
@@ -151,8 +131,8 @@ body {
 
 .slide-track {
   display: flex;
-  width: calc(250px * 14);
-  animation: scroll 40s linear infinite;
+  width: max-content;
+  animation: scroll 30s linear infinite;
 }
 
 .slide {
@@ -164,16 +144,14 @@ body {
 }
 
 .slide img {
-  width: 150px;
+  width: 120px;
   height: auto;
   object-fit: contain;
-  filter: none; /* ensure it's not transparent */
+  filter: none;
   opacity: 1;
 }
 
 @keyframes scroll {
   0% { transform: translateX(0); }
-  100% { transform: translateX(calc(-250px * 7)); }
+  100% { transform: translateX(-50%); }
 }
-
-
