@@ -131,3 +131,56 @@ body {
   transform: scale(1.05);
 }
 
+
+
+/* TEMPORARY TESTING BELOW */
+
+.company-banner {
+  padding: 2rem 0;
+  background: transparent; /* allow background to show through */
+}
+
+.slider {
+  background: transparent; /* transparent so black behind shows */
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  height: 100px;
+}
+
+.slider::before,
+.slider::after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(to right, transparent 0%, #010104 100%);
+}
+
+.slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+
+.slider::before {
+  left: 0;
+  top: 0;
+}
+
+.slide-track {
+  display: flex;
+  animation: scroll 40s linear infinite;
+  width: calc(250px * 14);
+}
+
+.slide {
+  height: 100px;
+  width: 250px;
+}
+
+
