@@ -136,59 +136,44 @@ body {
 /* TEMPORARY TESTING BELOW */
 
 .company-banner {
-  position: relative;
-  z-index: 1; /* BELOW blur */
-  padding: 2rem 0;
   background: transparent;
+  padding: 2rem 0;
+  position: relative;
+  z-index: 5;
 }
 
 .slider {
-  background: transparent;
+  height: 100px;
   overflow: hidden;
   position: relative;
   width: 100%;
-  max-width: 960px;
-  margin: 0 auto;
-  height: 100px;
-}
-
-.slider::before,
-.slider::after {
-  content: "";
-  position: absolute;
-  width: 200px;
-  height: 100%;
-  z-index: 2;
-  pointer-events: none;
-  background: linear-gradient(to right, transparent 0%, #010104 100%);
-}
-
-.slider::after {
-  right: 0;
-  top: 0;
-  transform: rotateZ(180deg);
-}
-
-.slider::before {
-  left: 0;
-  top: 0;
 }
 
 .slide-track {
   display: flex;
-  animation: scroll 40s linear infinite;
   width: calc(250px * 14);
+  animation: scroll 40s linear infinite;
 }
 
 .slide {
   height: 100px;
   width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide img {
+  width: 150px;
+  height: auto;
+  object-fit: contain;
+  filter: none; /* ensure it's not transparent */
+  opacity: 1;
 }
 
 @keyframes scroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(calc(-250px * 7)); }
 }
-
 
 
