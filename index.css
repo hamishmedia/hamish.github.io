@@ -1,142 +1,132 @@
-/* Base Reset & Font */
-body, html {
+body {
+  background-color: #010104;
+  color: #ebe9fc;
+  font-size: 16px;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
-  background: #000;
-  color: white;
-  overflow-x: hidden;
 }
 
-/* Parallax Container */
 .parallax {
-  position: relative;
   width: 100%;
-  height: 100%;
-}
-
-/* Header Section */
-.parallax__header {
   position: relative;
-  height: 100vh;
   overflow: hidden;
 }
 
-/* Parallax Visuals */
+.parallax__header {
+  z-index: 2;
+  padding: 4rem;
+  justify-content: center;
+  align-items: center;
+  min-height: 100svh;
+  display: flex;
+  position: relative;
+}
+
 .parallax__visuals {
+  object-fit: cover;
+  width: 100%;
+  max-width: none;
+  height: 120%;
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.parallax__black-line-overflow {
+  z-index: 20;
+  background-color: black;
   width: 100%;
-  height: 100%;
+  height: 2px;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
 }
 
 .parallax__layers {
-  position: relative;
   width: 100%;
   height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
 }
 
 .parallax__layer-img {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  height: auto;
+  pointer-events: none;
   object-fit: cover;
-  z-index: 1;
+  width: 100%;
+  height: 117.5%;
+  position: absolute;
+  top: -17.5%;
+  left: 0;
 }
 
-/* Title Section Below Images - Parallax Effect */
 .parallax__layer-title {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Left-aligned */
+  justify-content: flex-start; /* Align to the left */
   padding-left: 4vw;
   width: 100%;
+  height: 100svh;
   position: absolute;
-  top: 40%;  /* Adjust title position as needed */
+  top: 0;
   left: 0;
-  z-index: 2;
-  transform: translateZ(0) scale(1);
 }
 
 .parallax__title {
-  font-size: clamp(2rem, 8vw, 5rem);
+  font-family: 'Montserrat', sans-serif;
   font-weight: 900;
+  font-size: clamp(2rem, 8vw, 5rem);
   line-height: 1;
   color: white;
   margin: 0;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);  /* Optional: Add shadow for contrast */
 }
 
-/* Fade Effect Removed */
+
+
 .parallax__fade {
-  display: none;  /* Hide the fade/blur effect */
-}
-
-/* Scrolling Logo Banner */
-.company-banner {
-  background-color: black;
-  padding: 1rem 0;
+  z-index: 30;
   width: 100%;
-  position: relative;
-  z-index: 5;
+  height: 20%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
-.slider {
-  height: 100px;
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-}
-
-.slide-track {
-  display: flex;
-  width: calc(250px * 20);  /* Enough width to create continuous scrolling */
-  animation: scroll 40s linear infinite;
-}
-
-.slide {
-  height: 100px;
-  width: 250px;
+.parallax__content {
+  padding: 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 100svh;
 }
 
-.slide img {
-  width: 150px;
-  height: auto;
-  object-fit: contain;
-  filter: none;
-  opacity: 1;
+.osmo-icon-svg {
+  width: 8em;
+  position: relative;
 }
 
-/* Scrolling Animation */
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-250px * 10));  /* Adjust based on logo width */
-  }
-}
-
-/* Parallax Content Section */
-.parallax__content {
-  padding: 4rem 2rem;
-  text-align: center;
+.parallax__more-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  text-decoration: none;
 }
 
 .parallax__more-img {
-  max-width: 100%;
+  width: 160px;
   height: auto;
   transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
 .parallax__more-img:hover {
+  transform: scale(1.1);
+}
+
+
+.parallax__more-link:hover {
   transform: scale(1.05);
 }
