@@ -136,12 +136,14 @@ body {
 /* TEMPORARY TESTING BELOW */
 
 .company-banner {
+  position: relative;
+  z-index: 1; /* BELOW blur */
   padding: 2rem 0;
-  background: transparent; /* allow background to show through */
+  background: transparent;
 }
 
 .slider {
-  background: transparent; /* transparent so black behind shows */
+  background: transparent;
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -182,5 +184,11 @@ body {
   height: 100px;
   width: 250px;
 }
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-250px * 7)); }
+}
+
 
 
